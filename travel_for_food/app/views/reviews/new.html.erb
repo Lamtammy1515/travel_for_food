@@ -1,0 +1,19 @@
+<h1>Create Review</h1>
+
+<%= form_for :review, url: reviews_path do |f|%>
+<%= f.label :title %>
+<%= f.text_field :title%>
+
+
+Star Rating <%= f.text_field :star_rating%>
+
+<%= f.label :review %>
+<%= f.text_area :review%>
+
+<%= f.label :image%>
+<%= f.text_field :image%>
+
+
+<%=f.submit "Submit Review"%>
+
+<%end%>

@@ -15,14 +15,14 @@ class LocationsController < ApplicationController
     def create 
         @location = Location.create(location_params)
         if @location.save 
-            redirect_to locations_path
+            redirect_to new_location_restaurant_path(@location)
         else 
             render :new 
         end 
     end 
 
     private
-  def city_params
+  def location_params
     params.require(:location).permit(:city, :country)
   end
 end 

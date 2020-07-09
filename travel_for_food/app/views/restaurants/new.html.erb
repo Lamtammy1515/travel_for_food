@@ -1,5 +1,8 @@
 <h3>Add new Restuarant</h3>
 
+<%= render partial: '/errors', locals: { record: @restaurant }%>
+
+
 <%= form_for(@restaurant) do |f|%>
      <%= f.label :name %>
     <%= f.text_field :name %><br><br>
