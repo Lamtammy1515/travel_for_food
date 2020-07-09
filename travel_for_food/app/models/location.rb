@@ -1,3 +1,2 @@
-class Location < ApplicationRecord 
-    has_many :restaurants 
-end 
+class Location < ApplicationRecord
+end
