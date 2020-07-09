@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   #resources :welcome, only: [:home], path_names: {new: 'home'}
   #resources :users, only: [:new, :create], path_names: {new: 'signup'}
-  #resources :restaurants, only: [:index]
+  resources :restaurants, only: [:index, :new]
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
