@@ -17,11 +17,13 @@ Rails.application.routes.draw do
 
   #resources :welcome, only: [:home], path_names: {new: 'home'}
   #resources :users, only: [:new, :create], path_names: {new: 'signup'}
-  resources :reviews, only: [:index, :new, :create]
+
   resources :locations, only: [:index, :new, :create] do
-  resources :restaurants, only: [:index, :new] 
-  end 
- resources :restaurants, only: [:create]
+      resources :restaurants, only: [:index, :new, :create] do 
+            resources :reviews, only: [:index, :new, :create]
+          end 
+        end 
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

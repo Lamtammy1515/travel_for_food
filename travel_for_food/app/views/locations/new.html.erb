@@ -2,7 +2,7 @@
 
 <%= render partial: '/errors', locals: { record: @location } %>
 
-<%= form_for(:location) do |f|%>
+<%= form_for(@location) do |f|%>
 <%=f.label :city%>
 <%=f.text_field :city%>
 
