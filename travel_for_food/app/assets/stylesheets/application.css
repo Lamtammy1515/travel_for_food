@@ -13,3 +13,234 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    margin: 0;
+    background-color: #ECECEB;
+    font-family: 'Open Sans', sans-serif;
+  }
+ 
+ /* ----- NAV BAR ----- */
+  .topnav {
+    background-color: #428FF4;
+    overflow: hidden;
+  }
+ 
+  .topnav a {
+    padding: 14px 16px;
+    color: #F2F2F2;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    text-decoration: none;
+    font-size: .85em;
+  }
+ 
+  .topnav a.logo {
+    font-size: 1.15em;
+    color: #FFDEAD;
+    vertical-align: middle;
+    display: inline-block;
+  }
+ 
+  .topnav a:hover.logo {
+    color: #FFDEAD;
+  }
+ 
+  .topnav a:hover {
+    color: #3357B9;
+  }
+ 
+  .topnav a:active {
+    color: #3357B9;
+  }
+ 
+ /* ----- HOME PAGE ----- */
+ .home {
+   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/venice.jpg') no-repeat center center;
+   background-size: cover;
+   height: 800px;
+ }
+ 
+ .home h2 {
+   padding-top: 25px;
+   text-align: center;
+   color: white;
+ }
+ 
+ /* ----- LOGIN/STARTUP PAGES ----- */
+ .start-pages {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin-bottom: 25px;
+   border: 1px solid #A9A9A9;
+   border-radius: 5px;
+   background-color: #FDFCFC;
+   text-align: center;
+   display: block;
+   padding-top: 20px;
+   display: block;
+ }
+ 
+ .signup-login {
+   width: 300px;
+   min-height: 300px;
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+ 
+ .user-errors {
+   color: red;
+   padding-top: 15px;
+   padding-bottom: 5px;
+ }
+ 
+ /* ----- CONTENT PAGES ----- */
+ .info-box {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin-top: 30px;
+   width: 300px;
+   height: 250px;
+   border: 1px solid #A9A9A9;
+   border-radius: 15px;
+   background-color: #DEDBDB;
+   text-align: center;
+ }
+ 
+ .info-box.med-box {
+   width: 400px;
+   height: 325px;
+   padding-left: 15px;
+   padding-right: 15px;
+ }
+ 
+ .list-details {
+   margin-top: 30px;
+   width: 60%;
+   margin-left: 20%;
+   margin-right: 20%;
+ }
+ 
+ .scope-page {
+   margin-top: 30px;
+   text-align: center;
+ }
+ 
+ .underlined-list {
+   margin-top: 30px;
+   border-top: 1px solid #C0C0C0;
+   padding-top: 10px;
+   margin: 10px auto;
+ }
+ 
+ .form {
+   width: 80%;
+   margin: 30px auto;
+   padding: 15px 25px;
+   border: 1px solid #A9A9A9;
+   border-radius: 5px;
+   background-color: #FDFCFC;
+ }
+ 
+ .form-errors {
+   color: red;
+ }
+ 
+ table {
+   border-collapse: collapse;
+   width: 70%;
+   margin-left: 15%;
+   margin-right: 15%;
+ }
+ 
+ th {
+   padding: 8px 10px;
+   text-align: left;
+   border-top: 1px solid #C0C0C0;
+   border-bottom: 1px solid #C0C0C0;
+ }
+ 
+ td {
+   padding: 5px 10px;
+ }
+  tr.border-bottom {
+    border-bottom: 1px solid #C0C0C0;
+  }
+ 
+  /* ----- BUTTONS ----- */
+  .btn-sm {
+    margin-right: 10px;
+    padding: 0 auto;
+    display: inline;
+  }
+ 
+  .btn-md {
+    display: block;
+    margin: 0px auto;
+  }
+ 
+  .btn-rounded {
+    border-radius: 25px;
+  }
+ 
+  .button-below-table {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+ 
+  /* ----- LINKS ----- */
+ 
+  .no-underline a: {
+    font-size: 1.05em;
+  }
+ 
+  .no-underline a:link {
+    text-decoration: none;
+    color: black;
+  }
+ 
+ .no-underline a:hover {
+    color: blue;
+  }
+ 
+  .no-underline a:visited {
+    color: black;
+  }
+ 
+  .no-underline a:visited:hover {
+    color: blue;
+  }
+ 
+ /* ----- MISC ----- */
+ 
+  h4.box-heading {
+    border-bottom: 1px solid #A9A9A9;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+ 
+ .align-table {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 10px;
+   }
+ 
+   h4.align-table {
+      margin-top: 30px;
+   }
+ 
+  .bold-text {
+    font-weight: bold;
+  }
+ 
+  .blue-bold {
+    color: blue;
+    font-weight: bold;
+  }
