@@ -1,9 +1,9 @@
 <h1>Sign Up Today</h1>
 
-  <% form_for @user do |f| %>
-      <%= f.text_field :email%>
-      <%= f.text_field :name %>
-      <%= f.password_field :password %><br><br>
+  <%= form_for(@user, url: 'signup') do |f| %>
+      Email: <%= f.text_field :email%><br><br>
+     Name: <%= f.text_field :name %><br><br>
+     Password: <%= f.password_field :password %><br><br>
       <%= f.submit "Create Account"%>
     <% end %>
 
