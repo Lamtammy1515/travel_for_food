@@ -1,0 +1,9 @@
+<h1>Sign Up Today</h1>
+
+  <% form_for @user do |f| %>
+      <%= f.text_field :email%>
+      <%= f.text_field :name %>
+      <%= f.password_field :password %><br><br>
+      <%= f.submit "Create Account"%>
+    <% end %>
+
