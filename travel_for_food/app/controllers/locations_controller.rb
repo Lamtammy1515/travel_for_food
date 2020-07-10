@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController 
 
     def index 
-        @locations = Location.all.order(:country)
+        @locations = Location.all.order(:country).uniq
     end 
 
     def show 
