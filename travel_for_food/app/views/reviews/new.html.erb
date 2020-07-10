@@ -1,18 +1,24 @@
 <h1>Create Review</h1>
 
 <%= form_for :review, url: reviews_path do |f|%>
+
+   <%= f.fields_for :location do |attr| %>
+          <%= f.label :city, "City Name" %>
+          <%= attr.text_field :city %><br><br>
+     Select Country: <%= attr.country_select :country, ['United States of America'], { include_blank: true }, { class: 'chosen-select' } %><br><br>
+    <%end%>
+
 <%= f.label :title %>
-<%= f.text_field :title%>
+<%= f.text_field :title%><br><br>
 
 
-Star Rating <%= f.text_field :star_rating%>
+Star Rating <%= f.text_field :star_rating%><br><br>
 
 <%= f.label :review %>
-<%= f.text_area :review%>
+<%= f.text_area :review%><br><br>
 
 <%= f.label :image%>
-<%= f.text_field :image%>
-
+<%= f.text_field :image%><br><br>
 
 <%=f.submit "Submit Review"%>
 
