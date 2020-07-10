@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController 
     def index 
-        @restaurants = Restaurant.all 
+      @location = Location.find_by(id: params[:location_id])
     end 
 
     def show 

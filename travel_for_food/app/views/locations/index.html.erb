@@ -1,3 +1,7 @@
 <h1>List of all Locations</h1>
 
-<%= link_to("Create new Review", new_review_path)%>
+<% @locations.each do |f|%>
+<li><%=f.country%>, <%=f.city%></li>
+<%end%>
+
+
