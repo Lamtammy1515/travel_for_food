@@ -1,4 +1,7 @@
-<h1>List of all Reviews</h1>
+<h1>List of All Posted Reviews</h1>
 
-<%= @review.each do |review|%>
-<%= link_to review.title, %>
+<%= @reviews.each do |review|%>
+<%= link_to review.title %>
+<%end%>
+
+

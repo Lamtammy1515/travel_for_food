@@ -1,8 +1,0 @@
-<h3>Add new Restaurant</h3>
-
-<%= form_for(:restaurant) do |f|%>
-     <%= f.label :name %>
-    <%= f.text_field :name %><br><br>
-    <% f.hidden_field :location_id, value: @location.id %>
-    <%= f.submit "Add Restaurant"%>
-<%end%>

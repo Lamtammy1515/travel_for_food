@@ -1,8 +1,11 @@
-
+<h1> Log In Below </h1>
 <div class="start-pages signup-login">
 <h1>Travel for Food <br> Log in</h1>
+<p><i><%= @error %></p></i>
 <%= form_for :user do |f| %>
-    Email: <%= f.email_field :email%><br><br>
-    Password: <%= f.password_field :password%><br><br>
+    <%=f.label :username%>
+    <%= f.text_field :username%><br><br>
+     <%=f.label :password%>
+    <%= f.password_field :password%><br><br>
     <%= f.submit "Log in"%><br>
   <% end %>

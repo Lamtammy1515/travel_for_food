@@ -1,12 +1,18 @@
 <h1>Create Review</h1>
 
-<%= form_for :review, url: reviews_path do |f|%>
+
+<%= form_for :review, url: user_reviews_path do |f|%>
 
    <%= f.fields_for :location do |attr| %>
           <%= f.label :city, "City Name" %>
           <%= attr.text_field :city %><br><br>
      Select Country: <%= attr.country_select :country, ['United States of America'], { include_blank: true }, { class: 'chosen-select' } %><br><br>
     <%end%>
+
+    <%= f.fields_for :restaurant do |attr| %>
+          <%= f.label :name, "Restaurant Name" %>
+          <%= attr.text_field :name %>
+          <%end%>
 
 <%= f.label :title %>
 <%= f.text_field :title%><br><br>
