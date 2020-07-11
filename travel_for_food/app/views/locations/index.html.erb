@@ -1,5 +1,11 @@
 <h1>List of all Locations</h1>
 
 <% @locations.each do |f|%>
-<li><%=f.country%>, <%=f.city%></li>
+<ul>
+  * <%= f.country %> - <%= f.city %> -
+  <%= link_to "Display Reviews", location_path(f.id) %>
+</ul>
 <%end%>
+
+
+

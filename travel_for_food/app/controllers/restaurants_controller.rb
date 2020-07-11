@@ -1,11 +1,12 @@
 class RestaurantsController < ApplicationController 
-    def index 
-      @restaurants = Restaurant.all 
-    end 
+  before_action :require_login
+def index 
+    @restaurants = Restaurant.all.order(:name).uniq
+end 
 
-    def show 
-        @restaurant = Restaurant.find_by(params[:id])
-    end 
-
+def show 
+    @restaurant = Restaurant.find_by_id(params[:id])
+    @review = @restaurant.reviews.all
+end 
 
 end 

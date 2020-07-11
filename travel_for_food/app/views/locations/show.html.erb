@@ -1,0 +1,8 @@
+<h1>Reviews From <%= @location.country %>, <%= @location.city %> </h1>
+
+<% @location.reviews.each do |f| %>
+<%=f.title%>
+<%=f.star_rating%>
+<%=f.review%>
+<%=f.image%>
+<%end%>
