@@ -5,7 +5,7 @@
 
 <% @reviews.each do |f|%>
 <ul>
-  * <%= f.title %> - <%= f.user.username %> -
-  <%= link_to "Display Reviews", user_reviews_path(f.id) %>
+  <h3> * <%= f.title %> </h3> - Posted by <%= f.user.username.capitalize %> -
+  <%= link_to "Display Reviews", user_review_path(@reviews, f.id) %>
 </ul>
 <%end%>

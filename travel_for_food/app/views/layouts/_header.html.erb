@@ -5,8 +5,8 @@
   <%= link_to("Sign Up", signup_path) %>
 <% else %>
   <%= link_to("Create Review", new_user_review_path(current_user)) %>
-  <%= link_to("Latest Reviews", user_reviews_path(current_user)) %>
-  <%= link_to("My Reviews", user_path(current_user)) %>
+  <%= link_to("My Reviews", user_reviews_path(current_user)) %>
+  <%= link_to("Latest Reviews", user_path(current_user)) %>
   <%= link_to("Restaurants", restaurants_path) %>
   <%= link_to("Locations", locations_path) %>
   <%= link_to("Reviewers", users_path) %>

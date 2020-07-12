@@ -6,6 +6,6 @@ class LocationsController < ApplicationController
 
     def show 
         @location = Location.find_by_id(params[:id])
-        @review = @location.reviews.all
+        @review = Review.find_by_id(params[:location_id])
     end 
 end 

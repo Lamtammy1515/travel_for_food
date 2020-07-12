@@ -1,7 +1,9 @@
 
-<h1><%=@user.username.capitalize%>'s Reviews </h1>
+<h1> <%= @review.user.username.capitalize %>'s Reviews </h1>
 
-<%= @review.title %>
-<%= @review.star_rating %>
-<%= @review.review %>
-<%= @review.location_id %>
+Title: <%= @review.title %> <br><br>
+Star Rating: <%= @review.star_rating %> out of 5!<br><br>
+Review:<%= @review.review %><br><br>
+
+<%= @review.image %><br><br>
+

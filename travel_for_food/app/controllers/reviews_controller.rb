@@ -1,25 +1,24 @@
 class ReviewsController < ApplicationController 
     before_action :require_login
     def index
-        find_user
+        @user = User.find_by_id(params[:user_id])
         @reviews = @user.reviews.all
       end
     
       def show
         find_user
-        find_review
+        @user = User.find_by_id(params[:user_id])
+        @review = Review.find_by_id(params[:id])
       end
     
       def new 
         set_user
         find_review
         @review = Review.new
-        @review = Restaurant.new 
-        @review = Location.new 
       end
 
     def create 
-        @review = Review.build(review_params)
+        @review = Review.new(review_params)
         @review.user_id = session[:user_id]
         if @review.save 
             redirect_to user_reviews_path(@review)
@@ -44,6 +43,6 @@ class ReviewsController < ApplicationController
   
 
   def review_params
-    params.require(:review).permit(:title, :review, :image, :star_rating, :user_id)
+    params.require(:review).permit(:title, :review, :image, :star_rating, :user_id, location_attributes: [:city, :country], restaurant_attributes: [:name])
   end
 end 

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-
+  
 
 
 
@@ -19,11 +19,14 @@ Rails.application.routes.draw do
   #resources :users, only: [:new, :create], path_names: {new: 'signup'}
 
   resources :locations, only: [:index, :show, :new, :create] 
-  resources :restaurants, only: [:index, :show, :new, :create] 
-  
+  resources :restaurants, only: [:index, :show, :new, :create] do 
+    resources :reviews, only: [:index, :show]
+  end 
+
   resources :users, only: [:index, :new, :create, :show] do 
    resources :reviews, only: [:index, :show, :new, :create]
   end
 
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

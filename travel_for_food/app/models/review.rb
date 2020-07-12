@@ -6,5 +6,7 @@ class Review < ApplicationRecord
     validates :review, presence: true
     validates :star_rating, presence: true
     validates :title, presence: true
-   
+    accepts_nested_attributes_for :location
+    accepts_nested_attributes_for :restaurant
+ 
 end
