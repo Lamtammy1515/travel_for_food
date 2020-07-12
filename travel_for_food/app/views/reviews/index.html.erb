@@ -1,5 +1,4 @@
-<body> 
-<header class="showcase"> 
+
 <h1>List of <%= @user.username.capitalize %>'s Posted Reviews </h1>
 
 <% @reviews.each do |f|%>
@@ -8,7 +7,5 @@
   <%= link_to "Display Reviews", user_review_path(@reviews, f.id) %>
 </ul>
 <%end%>
-</header>
-</body> 
 
 

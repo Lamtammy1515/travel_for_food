@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   #resources :welcome, only: [:home], path_names: {new: 'home'}
   #resources :users, only: [:new, :create], path_names: {new: 'signup'}
 
-  resources :locations, only: [:index, :show, :new, :create] 
+  resources :locations, only: [:index, :show, :new, :create]  
+
+
   resources :restaurants, only: [:index, :show, :new, :create] do 
     resources :reviews, only: [:index, :show]
   end 
