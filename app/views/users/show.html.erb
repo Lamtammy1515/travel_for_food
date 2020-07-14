@@ -1,0 +1,8 @@
+<h1>List of Everyone's Reviews</h1>
+
+<% @reviews.each do |f|%>
+<ul>
+  <h3> * <%= f.title %> </h3> - Posted by <%= f.user.username.capitalize %> -
+  <%= link_to "Display Reviews", user_review_path(@reviews, f.id) %>
+</ul>
+<%end%>
