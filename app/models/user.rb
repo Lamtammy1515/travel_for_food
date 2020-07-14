@@ -5,5 +5,6 @@ class User < ApplicationRecord
     validates_presence_of :email, :username, :password
     has_secure_password
 
-    
+   def hello 
+   end 
 end 
