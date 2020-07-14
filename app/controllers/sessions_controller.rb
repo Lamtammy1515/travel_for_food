@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         @user = User.create(username: request.env["omniauth.auth"]["info"]["nickname"], github_uid: request.env["omniauth.auth"]["uid"], password: "github")
         end 
         login_path(@user)
-        redirect_to user_reviews_path
+        redirect_to users_path(@user)
       else 
 
     @user = User.find_by(username: params[:user][:username])
