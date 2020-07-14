@@ -1,0 +1,34 @@
+<h1>Edit Review</h1>
+
+
+<%= form_for :review, url: edit_user_review_path, :method => 'patch' do |f|%>
+<br>
+<%= f.label :title %>
+<%= f.text_field :title%><br><br>
+
+<%= f.label :star_rating %>
+<%= f.text_field :star_rating%><br><br>
+
+<%= f.label :review %>
+<%= f.text_area :review%><br><br>
+
+<%= f.label :image%>
+<%= f.text_field :image%><br><br>
+
+   <%= f.fields_for :location do |attr| %>
+          <%= attr.label :city, "City Name" %>
+          <%= attr.text_field :city%><br><br>
+     Select Country <%= attr.country_select :country, ['United States of America'], { :include_blank => "Please select Country" }, { class: 'chosen-select' } %><br><br>
+    <%end%>
+
+    <%= f.fields_for :restaurant do |attr| %>
+          <%= attr.label :name, "Restaurant Name" %>
+          <%= attr.text_field :name %><br><br>
+          <%end%>
+
+
+
+
+<%=f.submit "Submit Review"%>
+
+<%end%>

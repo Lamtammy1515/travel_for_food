@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  get '/auth/:provider/callback', to: 'sessions#create'
+
   
 
 
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
   end 
 
   resources :users, only: [:index, :new, :create, :show] do 
-   resources :reviews, only: [:index, :show, :new, :create]
+   resources :reviews, only: [:index, :show, :new, :create, :edit, :update]
   end
 
   

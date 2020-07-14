@@ -4,6 +4,12 @@
 <h2>Title: "<%= @review.title %>" <br><br></h2>
 <h3>Star Rating: <%= @review.star_rating %> out of 5!<br><br></h3> 
 <h3> Review: </h3> <%= @review.review %><br><br>
-
 <%= @review.image %><br><br>
+
+
+		<% if @review.user_id == session[:user_id] %>
+				<button type="button"><%= link_to "Edit", edit_user_review_path(@review.id, @review)%></button>	
+		<% end %>	
+
+
 

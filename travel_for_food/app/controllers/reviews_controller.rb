@@ -27,6 +27,23 @@ class ReviewsController < ApplicationController
         end 
     end 
 
+    def edit
+    end
+  
+    def update
+      if @review.update(review_params)
+        redirect_to user_reviews_path(@review)
+      else
+        render 'edit'
+      end
+    end
+  
+    def destroy
+      @review.destroy
+      redirect_to user_reviews_path(@review)
+    end
+  
+
     private
     
     def find_user
@@ -40,7 +57,7 @@ class ReviewsController < ApplicationController
     def find_location
       @location = Location.find_by(id: params[:location_id])
     end
-  
+
 
   def review_params
     params.require(:review).permit(:title, :review, :image, :star_rating, :user_id, location_attributes: [:city, :country], restaurant_attributes: [:name])
