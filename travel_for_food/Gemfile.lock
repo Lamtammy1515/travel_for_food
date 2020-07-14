@@ -106,6 +106,10 @@ GEM
       countries (~> 3.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.6)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.9.0)
     execjs (2.7.0)
     faraday (1.0.1)
@@ -296,8 +300,10 @@ DEPENDENCIES
   chosen-rails
   countries
   country_select
+  dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  omniauth
   omniauth-github!
   pry
   puma (~> 4.1)
