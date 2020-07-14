@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/github', :as => 'github_auth'
+  post '/auth/:provider/callback', to: 'sessions#create'
+ 
+ 
 
   
 
