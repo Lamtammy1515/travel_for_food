@@ -1,5 +1,9 @@
 <h1>Edit Review</h1>
 
+<% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+
 
 <%= form_for(:review, url: edit_user_review_path, :method => 'patch') do |f|%>
 <br>

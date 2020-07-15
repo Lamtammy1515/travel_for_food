@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
     end 
 
     def edit
-      @user = User.find_by_id(params[:user_id])
+      set_user
       find_review
     end
   
@@ -60,7 +60,7 @@ class ReviewsController < ApplicationController
     end
   
     def find_review
-      @review = Review.find_by(params[:id])
+      @review = Review.find_by(id: params[:id])
     end
   
     def find_location
