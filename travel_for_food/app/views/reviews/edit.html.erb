@@ -17,13 +17,13 @@
 
    <%= f.fields_for :locations do |attr| %>
           <%= attr.label :city, "City Name" %>
-          <%= attr.text_field :city%><br><br>
+          <%= attr.text_field :city, value: @review.location.city%><br><br>
      Select Country <%= attr.country_select :country, ['United States of America'], { :include_blank => "Please select Country" }, { class: 'chosen-select' } %><br><br>
     <%end%>
 
     <%= f.fields_for :restaurants do |attr| %>
           <%= attr.label :name, "Restaurant Name" %>
-          <%= attr.text_field :name %><br><br>
+          <%= attr.text_field :name, value: @review.restaurant.name %><br><br>
           <%end%>
 
 <%=f.submit "Edit Review"%>

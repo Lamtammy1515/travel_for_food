@@ -1,16 +1,12 @@
 class ReviewsController < ApplicationController 
     before_action :require_login
     def index
-
         @user = User.find_by(id: session[:user_id])
-        
         @reviews = @user.reviews
       end
     
       def show
-     
         find_user
-       
         @review = Review.find_by_id(params[:id])
       end
     
@@ -20,12 +16,10 @@ class ReviewsController < ApplicationController
         @review = Review.new
       end
 
-    def create 
+      def create 
         @review = Review.new(review_params)
         @location = Location.find_or_create_by(city: params[:review][:location][:city], country: params[:review][:location][:country])
         @restaurant = Restaurant.find_or_create_by(name: params[:review][:restaurant][:name], location_id: @location.id)
-     
-        
         @review.user_id = session[:user_id]
         @review.location_id = @location.id
         @review.restaurant_id = @restaurant.id
@@ -37,13 +31,14 @@ class ReviewsController < ApplicationController
     end 
 
     def edit
+      @user = User.find_by_id(params[:user_id])
+      find_review
     end
   
     def update
       set_user
       find_review
       if @review.update(review_params)
-        @success = "Review Updated!"
         redirect_to user_reviews_path(@review)
       else
         render 'edit'

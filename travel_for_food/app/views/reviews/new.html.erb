@@ -5,6 +5,7 @@
       <% end %>
 
 <%= form_for :review, url: user_reviews_path do |f|%>
+
 <br>
 <%= f.label :title %>
 <%= f.text_field :title%><br><br>
@@ -26,11 +27,8 @@
 
     <%= f.fields_for :restaurant do |attr| %>
           <%= attr.label :name, "Restaurant Name" %>
-          <%= attr.text_field :name %><br><br>
+          <%= attr.text_field :name%><br><br>
           <%end%>
-
-
-
 
 <%=f.submit "Submit Review"%>
 
