@@ -21,7 +21,6 @@ class ReviewsController < ApplicationController
       end
 
     def create 
-
         @review = Review.new(review_params)
         @location = Location.find_or_create_by(city: params[:review][:location][:city], country: params[:review][:location][:country])
         @restaurant = Restaurant.find_or_create_by(name: params[:review][:restaurant][:name], location_id: @location.id)
@@ -41,8 +40,9 @@ class ReviewsController < ApplicationController
     end
   
     def update
-      @review = Review.find(params[:id])
-      if @review.update_attributes(review_params)
+      set_user
+      find_review
+      if @review.update(review_params)
         @success = "Review Updated!"
         redirect_to user_reviews_path(@review)
       else
@@ -51,6 +51,8 @@ class ReviewsController < ApplicationController
     end
   
     def destroy
+      set_user 
+      find_review
       @review.destroy
       redirect_to user_reviews_path(@review)
     end
@@ -72,6 +74,6 @@ class ReviewsController < ApplicationController
 
 
   def review_params
-    params.require(:review).permit(:title, :review, :image, :star_rating, :user_id, location_attributes: [:city, :country], restaurant_attributes: [:name])
+    params.require(:review).permit(:title, :review, :image, :star_rating, :user_id, location_attributes: [:id, :city, :country], restaurant_attributes: [:id, :name])
   end
 end 

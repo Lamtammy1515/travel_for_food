@@ -1,15 +1,12 @@
 
 <h1> <%= @review.user.username.capitalize %>'s Reviews </h1>
 
-<h2>Title: "<%= @review.title %>" <br><br></h2>
-<h2>Star Rating: <%= @review.star_rating %> out of 5!<br><br></h2> 
-<h2> Restaurant Name: </h2> <%= @review.restaurant.name %><br><br>
-<h2> Location: </h2> <%= @review.location.city %>, <%= @review.location.country %><br><br>
-<h2> Review: </h2> <%= @review.review %><br><br>
-
-<%= @review.image %><br><br>
-
-
+<h2>Title: "<%= @review.title %>"</h2>
+<h4>Star Rating: <%= @review.star_rating %> out of 5!<br></h4> 
+<h4> Restaurant Name: <%= @review.restaurant.name %></h4> 
+<h4> Location:  <%= @review.location.city %>, <%= @review.location.country %></h4>
+<h3> Review: </h3>  <%= @review.review %> </h4>
+<br><br>
 		<% if @review.user_id == session[:user_id] %>
 				<button type="button"><%= link_to "Edit", edit_user_review_path(@review.id, @user)%></button>	
 		<% end %>	
