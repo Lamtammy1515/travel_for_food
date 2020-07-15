@@ -1,1 +1,10 @@
-<%= @review.restaurant.name %>
+<h1><%= @restaurant.name %></h1>
+
+<% @restaurant.reviews.each do |review| %>
+<ul>Title: <%=review.title%><br> 
+Star Rating: <%=review.star_rating%> <br>
+Restaurant Name: <%=review.restaurant.name%> <br>
+Location: <%=review.location.country%>, <%=review.location.city%> <br>
+ <%= review.user.username.capitalize %>'s Review: <%=review.review%><br>
+<%=review.image%><br></ul>
+<%end%>

@@ -1,8 +1,8 @@
 <h1>Reviews From <%= @location.country %>, <%= @location.city %> </h1>
 
 <% @location.reviews.each do |review| %>
-<%=review.title%>
-<%=review.star_rating%>
-<%=review.review%>
-<%=review.image%>
+<ul>Title: <%=review.title%><br> 
+Star Rating: <%=review.star_rating%> <br>
+ <%= review.user.username.capitalize %>'s Review: <%=review.review%><br>
+<%=review.image%><br></ul>
 <%end%>

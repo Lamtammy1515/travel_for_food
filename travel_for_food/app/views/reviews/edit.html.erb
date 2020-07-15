@@ -1,7 +1,7 @@
 <h1>Edit Review</h1>
 
 
-<%= form_for :review, url: edit_user_review_path, :method => 'patch' do |f|%>
+<%= form_for(:review, url: edit_user_review_path, :method => 'patch') do |f|%>
 <br>
 <%= f.label :title %>
 <%= f.text_field :title%><br><br>
@@ -27,8 +27,10 @@
           <%end%>
 
 
+<%=f.submit "Edit Review"%>
 
 
-<%=f.submit "Submit Review"%>
 
 <%end%>
+<br>
+<button><%= link_to "Delete Trip", user_reviews_path, controller: 'review', :method => 'destroy'%></button>

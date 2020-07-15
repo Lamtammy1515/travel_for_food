@@ -1,5 +1,8 @@
 <h1>List of All Reviewed Restaurants</h1>
 
-<% @restaurants.each do |f| %>
-<%= f.name %>
+<% @restaurants.each do |f|%>
+<ul>
+  * <%= f.name %>-
+  <%= link_to "Display Reviews", restaurant_path(f.id) %>
+</ul>
 <%end%>
