@@ -1,4 +1,4 @@
-<h1>Reviews From <%= @location.country %>, <%= @location.city %> </h1>
+<div class="text2"> Reviews From <%= @location.country %>, <%= @location.city %> </div>
 
 <% @location.reviews.each do |review| %>
 <ul><table id="customers">
@@ -7,13 +7,10 @@
 <th> Star Rating: </th> 
 <th> Restaurant: </th>
 <th> <%= review.user.username.capitalize %>'s Review:</th>
-
- </tr>
+</tr>
 <td><%=review.title%></td><br>
 <td><%=review.star_rating%> </td>
 <td><%=review.restaurant.name%></td>
 <td><%=review.review%></td>
-
-
 </table></ul>
 <%end%>

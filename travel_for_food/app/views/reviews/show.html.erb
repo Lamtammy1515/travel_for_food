@@ -1,5 +1,5 @@
 
-<h1> <%= @review.user.username.capitalize %>'s Reviews </h1>
+<div class="text2"><%= @review.user.username.capitalize %>'s <%= @review.location.city %> Review </div>
 
 <ul><table id="customers">
 <tr>
@@ -17,6 +17,6 @@
 </table></ul>
 
 <% if @review.user_id == session[:user_id] %>
-				<button type="button"><%= link_to "Edit", edit_user_review_path, method: 'get'%></button>
-				<button><%= link_to "Delete Trip", user_review_path(@user), :method => 'delete'%></button>
+				<button class="signupbtn"><%= link_to "Edit Review", edit_user_review_path, method: 'get'%></button>
+				<button class="signupbtn"><%= link_to "Delete Review", user_review_path(@user), :method => 'delete'%></button>
 		<% end %>	
