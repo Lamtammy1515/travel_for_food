@@ -8,7 +8,8 @@
 <h3> Review: </h3>  <%= @review.review %> </h4>
 <br><br>
 		<% if @review.user_id == session[:user_id] %>
-				<button type="button"><%= link_to "Edit", edit_user_review_path, method: 'get'%></button>	
+				<button type="button"><%= link_to "Edit", edit_user_review_path, method: 'get'%></button>
+				<button><%= link_to "Delete Trip", user_review_path(@user), :method => 'delete'%></button>
 		<% end %>	
 
 
