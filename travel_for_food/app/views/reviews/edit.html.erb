@@ -5,7 +5,7 @@
       <% end %>
 
 
-<%= form_for(:review, url: edit_user_review_path, :method => 'patch') do |f|%>
+<%= form_for(:review, url: user_review_path(@user), :method => 'patch') do |f|%>
 <br>
 <%= f.label :title %>
 <%= f.text_field :title%><br><br>
@@ -33,4 +33,4 @@
 <%=f.submit "Edit Review"%>
 <%end%>
 <br>
-<button><%= link_to "Delete Trip", user_reviews_path, controller: 'review', :method => 'destroy'%></button>
+<button><%= link_to "Delete Trip", user_review_path(@user), :method => 'delete'%></button>

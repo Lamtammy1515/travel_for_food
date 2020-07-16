@@ -1,0 +1,8 @@
+<h1>All Five Star Reviews</h1>
+    <% @review.five_star.each do |r| %>
+<ul><h4>
+  * <%= r.title %> - Post by <%= r.user.username.capitalize %> -
+  <%= link_to "Display Review", user_review_path(r.user_id, r.id) %></h4>
+</ul>
+    <% end %>
+    

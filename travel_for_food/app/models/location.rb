@@ -4,7 +4,6 @@ class Location < ApplicationRecord
     has_many :reviews, through: :restaurants
     validates_presence_of :city
     validates_presence_of :country
-   
     
     def country_name
         country = self.country
@@ -12,6 +11,6 @@ class Location < ApplicationRecord
     end
 
     def city_plus_country
-        "#{city.name}, #{country.name}"
+        "#{location.city}, #{location.country}"
     end
 end

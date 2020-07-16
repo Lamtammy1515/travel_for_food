@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#create'
  
- get '/auth/failure' => 'sessions#failure'
+  get '/auth/failure' => 'sessions#failure'
 
-  
+  get '/reviews/five_star' => 'reviews#five_star', as: :five_star
 
 
 

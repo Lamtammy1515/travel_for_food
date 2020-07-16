@@ -9,7 +9,11 @@ class ReviewsController < ApplicationController
         find_user
         @review = Review.find_by_id(params[:id])
       end
-    
+      
+      def five_star 
+        @review = Review.five_star
+      end 
+
       def new 
         set_user
         find_review
@@ -36,8 +40,9 @@ class ReviewsController < ApplicationController
     end
   
     def update
-      set_user
-      find_review
+     find_review 
+     set_user
+      
       if @review.update(review_params)
         redirect_to user_reviews_path(@review)
       else
