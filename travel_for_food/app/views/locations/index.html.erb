@@ -2,7 +2,8 @@
 
 <% @locations.each do |f|%>
 <ul><h4>
-  * <%= f.country %> - <%= f.city %> -
+  • <%= f.name %>-
+   <%= f.country %> - <%= f.city %> -
   <%= link_to "Display Reviews", location_path(f.id) %></h4>
 </ul>
 <%end%>
