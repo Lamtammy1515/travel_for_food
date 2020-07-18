@@ -1,19 +1,21 @@
 class SessionsController < ApplicationController 
-
+  
   def new 
     
   end 
 
-
   def create 
-    if request.env["omniauth.auth"]
-      @user = User.find_by(github_uid: request.env["omniauth.auth"]["uid"])
-      if @user.nil?
-      @user = User.create(username: request.env["omniauth.auth"]["info"]["nickname"], github_uid: request.env["omniauth.auth"]["uid"], password: "github")
-      end 
-      login_path(@user)
-      redirect_to users_path(@user)
-    else 
+    if params[:provider] == 'github'
+      @user = User.create_by_github_omniauth(auth)
+      session[:user_id] = @user.id
+      redirect_to user_reviews_path(@user)
+    else  
+
+   # if request.env["omniauth.auth"]
+    #  @user = User.find_or_create_by(username: request.env["omniauth.auth"]["info"]["nickname"], password_digest: random_salt)
+    #  session[:user_id] = @user.id
+    #  redirect_to root_path
+   # else 
 
   @user = User.find_by(username: params[:user][:username])
   if params[:user][:username] == "" || params[:user][:password] == ""
@@ -21,7 +23,7 @@ class SessionsController < ApplicationController
     redirect_to login_path 
   elsif @user && @user.try(:authenticate, params[:user][:password])
     session[:user_id] = @user.id
-    redirect_to user_reviews_path(@user)
+    redirect_to root_path
   else
   @error = "Incorrect username/password. Please try again."
     redirect_to login_path 
@@ -29,8 +31,21 @@ class SessionsController < ApplicationController
 end
 end 
 
+def omniauth
+  @user = User.create_by_github_omniauth(auth)
+
+  session[:user_id] = @user.id
+  redirect_to user_reviews_path(@user)
+end
+
   def destroy 
       session.clear 
       redirect_to root_path
   end 
+
+  private 
+
+  def auth
+    request.env['omniauth.auth']
+  end
 end 

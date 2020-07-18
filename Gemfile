@@ -27,7 +27,7 @@ gem 'dotenv-rails'
 gem 'countries', :require => 'countries/global'
 gem 'country_select'
 gem 'chosen-rails'
-
+gem 'sysrandom'
 
 
 # Use Active Storage variant
