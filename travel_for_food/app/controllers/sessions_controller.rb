@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController 
   
   def new 
-    
   end 
 
   def create 
@@ -17,7 +16,7 @@ class SessionsController < ApplicationController
     #  redirect_to root_path
    # else 
 
-  @user = User.find_by(username: params[:user][:username])
+      @user = User.find_by(username: params[:user][:username])
   if params[:user][:username] == "" || params[:user][:password] == ""
     @error ="Please enter all fields."
     redirect_to login_path 
@@ -27,16 +26,15 @@ class SessionsController < ApplicationController
   else
   @error = "Incorrect username/password. Please try again."
     redirect_to login_path 
+      end
+    end
+  end 
+
+  def omniauth
+    @user = User.create_by_github_omniauth(auth)
+    session[:user_id] = @user.id
+    redirect_to user_reviews_path(@user)
   end
-end
-end 
-
-def omniauth
-  @user = User.create_by_github_omniauth(auth)
-
-  session[:user_id] = @user.id
-  redirect_to user_reviews_path(@user)
-end
 
   def destroy 
       session.clear 
