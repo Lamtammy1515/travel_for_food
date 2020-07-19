@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get '/reviews/five_star' => 'reviews#five_star', as: :five_star
 
-
+  get '/users/active_reviewer' => 'users#active_reviewer', as: :active_reviewer
 
   #resources :welcome, only: [:home], path_names: {new: 'home'}
   #resources :users, only: [:new, :create], path_names: {new: 'signup'}

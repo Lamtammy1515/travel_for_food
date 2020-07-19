@@ -6,7 +6,7 @@ end
 
 def show 
     @restaurant = Restaurant.find_by_id(params[:id])
-    @review = @restaurant.reviews.all
+    @review = Review.find_by_id(params[:restaurant_id])
 end 
 
 end 
