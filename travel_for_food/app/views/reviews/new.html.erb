@@ -16,9 +16,6 @@
 <%= f.label :review %>
 <%= f.text_area :review%><br><br>
 
-<%= f.label :image%>
-<%= f.text_field :image%><br><br>
-
    <%= f.fields_for :location do |attr| %>
           <%= attr.label :city, "City Name" %>
           <%= attr.text_field :city %><br><br>
