@@ -9,8 +9,4 @@ class Location < ApplicationRecord
         country = self.country
         ISO3166::Country[country]
     end
-
-    def city_plus_country
-        "#{location.city}, #{location.country}"
-    end
 end
