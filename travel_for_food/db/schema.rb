@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_11_161011) do
+ActiveRecord::Schema.define(version: 2020_07_14_031450) do
 
   create_table "locations", force: :cascade do |t|
     t.string "city"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_07_11_161011) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
+    t.integer "github_uid"
   end
 
 end
