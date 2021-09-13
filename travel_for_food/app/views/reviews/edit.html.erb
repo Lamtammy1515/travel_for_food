@@ -1,7 +1,11 @@
-<h1>Edit Review</h1>
+<div class="text2">Edit Review</div>
+
+<% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
 
 
-<%= form_for :review, url: edit_user_review_path, :method => 'patch' do |f|%>
+<%= form_for(:review, url: user_review_path(@user), :method => 'patch') do |f|%>
 <br>
 <%= f.label :title %>
 <%= f.text_field :title%><br><br>
@@ -12,23 +16,18 @@
 <%= f.label :review %>
 <%= f.text_area :review%><br><br>
 
-<%= f.label :image%>
-<%= f.text_field :image%><br><br>
-
-   <%= f.fields_for :location do |attr| %>
+   <%= f.fields_for :locations do |attr| %>
           <%= attr.label :city, "City Name" %>
-          <%= attr.text_field :city%><br><br>
+          <%= attr.text_field :city, value: @review.location.city%><br><br>
      Select Country <%= attr.country_select :country, ['United States of America'], { :include_blank => "Please select Country" }, { class: 'chosen-select' } %><br><br>
     <%end%>
 
-    <%= f.fields_for :restaurant do |attr| %>
+    <%= f.fields_for :restaurants do |attr| %>
           <%= attr.label :name, "Restaurant Name" %>
-          <%= attr.text_field :name %><br><br>
+          <%= attr.text_field :name, value: @review.restaurant.name %><br><br>
           <%end%>
 
-
-
-
-<%=f.submit "Submit Review"%>
-
+<%=f.submit "Edit Review"%>
 <%end%>
+<br>
+<button><%= link_to "Delete Trip", user_review_path(@user), :method => 'delete'%></button>

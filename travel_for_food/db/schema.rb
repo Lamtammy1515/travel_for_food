@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_07_14_031450) do
+=======
+ActiveRecord::Schema.define(version: 2020_07_19_043520) do
+>>>>>>> cf66098562db38baa90e411c13a42298b12adde5
 
   create_table "locations", force: :cascade do |t|
     t.string "city"
@@ -25,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_07_14_031450) do
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.string "review"
-    t.string "image"
     t.integer "user_id"
     t.decimal "star_rating"
     t.integer "location_id"

@@ -1,8 +1,11 @@
-<h1>List of All Reviewed Restaurants</h1>
+<div class="text2">All Reviewed Restaurants</div>
 
 <% @restaurants.each do |f|%>
-<ul>
-  <h3> * <%= f.name %> </h3> - Posted by <%= f.user.username.capitalize %> -
-  <%= link_to "Display Reviews", restaurant_review_path(@restaurants, f.id) %>
+<ul><h4>
+  • <%= f.name %>-
+  <%= link_to "Display Reviews", restaurant_path(f.id) %></h4>
 </ul>
 <%end%>
+
+<button class="button button2"><h2><%= link_to "Interested in seeing our #1 reviewer? Click here!", active_reviewer_path%></h2></button>
+<button class="button button2"><h2><%= link_to "Want to display all 5 star reviews? Click here!", five_star_path%></h2></button>

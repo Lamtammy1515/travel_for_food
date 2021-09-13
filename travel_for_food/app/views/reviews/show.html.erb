@@ -1,15 +1,22 @@
 
-<h1> <%= @review.user.username.capitalize %>'s Reviews </h1>
+<div class="text2"><%= @review.user.username.capitalize %>'s <%= @review.location.city %> Review </div>
 
-<h2>Title: "<%= @review.title %>" <br><br></h2>
-<h3>Star Rating: <%= @review.star_rating %> out of 5!<br><br></h3> 
-<h3> Review: </h3> <%= @review.review %><br><br>
-<%= @review.image %><br><br>
+<ul><table id="customers">
+<tr>
+<th>Title: </th> 
+<th> Star Rating: </th> 
+<th> Restaurant: </th>
+<th> Location: </th>
+<th> <%= @review.user.username.capitalize %>'s Review:</th>
+ </tr>
+<td><%=@review.title%></td>
+<td><%=@review.star_rating%> </td>
+<td><%=@review.restaurant.name%> </td>
+<td><%=@review.location.country%>, <%=@review.location.city%></td>
+<td><%=@review.review%></td>
+</table></ul>
 
-
-		<% if @review.user_id == session[:user_id] %>
-				<button type="button"><%= link_to "Edit", edit_user_review_path(@review.id, @review)%></button>	
+<% if @review.user_id == session[:user_id] %>
+				<button class="signupbtn"><%= link_to "Edit Review", edit_user_review_path, method: 'get'%></button>
+				<button class="signupbtn"><%= link_to "Delete Review", user_review_path(@user), :method => 'delete'%></button>
 		<% end %>	
-
-
-

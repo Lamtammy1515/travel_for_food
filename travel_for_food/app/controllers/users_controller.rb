@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @reviews = Review.all 
   end 
 
+  def active_reviewer
+    @user = User.active_reviewer.first
+  end 
+
   def users_review
     @user = User.find_by_id(params[:user_id])
     @review = Review.user.all

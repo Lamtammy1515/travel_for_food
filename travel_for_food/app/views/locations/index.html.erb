@@ -1,11 +1,13 @@
-<h1>List of all Locations</h1>
+<div class="text2">All Reviewed Locations</div>
 
 <% @locations.each do |f|%>
-<ul>
-  * <%= f.country %> - <%= f.city %> -
-  <%= link_to "Display Reviews", location_path(f.id) %>
+<ul><h4>
+  • <%= f.country %> - <%= f.city %> -
+  <%= link_to "Display Reviews", location_path(f.id) %></h4>
 </ul>
 <%end%>
 
+<button class="button button2"><h2><%= link_to "Want to display 5 star reviews? Click here!", five_star_path%></h2></button>
+<button class="button button2"><h2><%= link_to "Click here to display our #1 reviewer!", active_reviewer_path%></h2></button>
 
 
