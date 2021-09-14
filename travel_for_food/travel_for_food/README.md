@@ -3,6 +3,8 @@ Application created using Sinatra for users from all around the world to share t
 
 [DEMO](https://youtu.be/qQFrJ-Vylig)
 
+[BLOG](https://lamtammy1515.github.io/my_rails_project_experience)
+
 ## Installation
 
 Start off by cloning this repo. 
