@@ -25,7 +25,5 @@ https://github.com/Lamtammy1515/travel_for_food
 
 
 ## License
-[MIT](https://github.com/Lamtammy1515/PostMeal_Client/blob/main/LICENSE.md)
-
-
+[MIT](https://github.com/Lamtammy1515/travel_for_food/blob/master/travel_for_food/travel_for_food/LICENSE.md)
 

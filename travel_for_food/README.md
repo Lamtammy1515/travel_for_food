@@ -1,5 +1,5 @@
-# Welcome to Post-Meal App
-
+# Welcome to Travel for Food App
+Application created using Sinatra for users from all around the world to share their travel experiences and of course, their food experience. Anyone is welcome to create an account and explore other traveler's posts as well.
 
 ## Installation
 
@@ -25,7 +25,7 @@ https://github.com/Lamtammy1515/travel_for_food
 
 
 ## License
-[MIT](https://github.com/Lamtammy1515/PostMeal_Client/blob/main/LICENSE.md)
+[MIT](https://github.com/Lamtammy1515/travel_for_food/blob/master/travel_for_food/travel_for_food/LICENSE.md)
 
 
 
