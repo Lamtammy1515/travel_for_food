@@ -1,5 +1,5 @@
 # Welcome to Travel for Food App
-Application created using Sinatra for users from all around the world to share their travel experiences and of course, their food experience. Anyone is welcome to create an account and explore other traveler's posts as well. 
+Application created using Ruby on Rails for users from all around the world to share their travel experiences and of course, their food experience. Anyone is welcome to create an account and explore other traveler's posts as well. 
 
 [DEMO](https://youtu.be/qQFrJ-Vylig)
 
