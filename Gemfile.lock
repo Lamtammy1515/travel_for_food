@@ -140,7 +140,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    nio4r (2.5.2)
+    nio4r (2.5.8)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     oauth2 (1.4.4)
@@ -159,7 +159,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.5)
-    puma (4.3.5)
+    puma (4.3.9)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-proxy (0.6.5)
@@ -226,6 +226,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    sysrandom (1.0.5)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -272,13 +273,14 @@ DEPENDENCIES
   omniauth
   omniauth-github!
   pry
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
+  sysrandom
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
